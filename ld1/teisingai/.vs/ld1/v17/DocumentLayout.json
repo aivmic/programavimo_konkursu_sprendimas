@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{59CC910C-E571-49EF-B129-6A874D33B9EB}|solutions\\solutions.csproj|solutionrelative:solutions\\sz03201903u2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{59CC910C-E571-49EF-B129-6A874D33B9EB}|solutions\\solutions.csproj|c:\\users\\aivaras\\desktop\\derinimas\\ld1\\teisingai\\solutions\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59CC910C-E571-49EF-B129-6A874D33B9EB}|solutions\\solutions.csproj|solutionrelative:solutions\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{59CC910C-E571-49EF-B129-6A874D33B9EB}|solutions\\solutions.csproj|c:\\users\\aivaras\\desktop\\derinimas\\ld1\\teisingai\\solutions\\sz02201802u2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{59CC910C-E571-49EF-B129-6A874D33B9EB}|solutions\\solutions.csproj|solutionrelative:solutions\\sz02201802u2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B54BF8BC-80E0-4CAF-A41E-DDD61FEE94AB}|tests\\tests.csproj|c:\\users\\aivaras\\desktop\\derinimas\\ld1\\teisingai\\tests\\sz03201903u2test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B54BF8BC-80E0-4CAF-A41E-DDD61FEE94AB}|tests\\tests.csproj|solutionrelative:tests\\sz03201903u2test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B54BF8BC-80E0-4CAF-A41E-DDD61FEE94AB}|tests\\tests.csproj|c:\\users\\aivaras\\desktop\\derinimas\\ld1\\teisingai\\tests\\sz02201802u2test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,8 +27,8 @@
       "RelativeMoniker": "D:0:0:{59CC910C-E571-49EF-B129-6A874D33B9EB}|solutions\\solutions.csproj|solutionrelative:solutions\\az01201701u2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B54BF8BC-80E0-4CAF-A41E-DDD61FEE94AB}|tests\\tests.csproj|c:\\users\\aivaras\\desktop\\derinimas\\ld1\\teisingai\\tests\\sz03201903u2test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B54BF8BC-80E0-4CAF-A41E-DDD61FEE94AB}|tests\\tests.csproj|solutionrelative:tests\\sz03201903u2test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{59CC910C-E571-49EF-B129-6A874D33B9EB}|solutions\\solutions.csproj|c:\\users\\aivaras\\desktop\\derinimas\\ld1\\teisingai\\solutions\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59CC910C-E571-49EF-B129-6A874D33B9EB}|solutions\\solutions.csproj|solutionrelative:solutions\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B54BF8BC-80E0-4CAF-A41E-DDD61FEE94AB}|tests\\tests.csproj|c:\\users\\aivaras\\desktop\\derinimas\\ld1\\teisingai\\tests\\tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -49,7 +49,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
@@ -70,40 +70,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Regionas01Metai01U2.cs",
-              "DocumentMoniker": "C:\\Users\\Aivaras\\AppData\\Local\\Temp\\12258a1e-2e79-4ab5-82ac-0c28dc0b4b23_ld1(3).zip.b23\\ld1\\teisingai\\solutions\\Regionas01Metai01U2.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\AppData\\Local\\Temp\\12258a1e-2e79-4ab5-82ac-0c28dc0b4b23_ld1(3).zip.b23\\ld1\\teisingai\\solutions\\Regionas01Metai01U2.cs",
-              "ToolTip": "C:\\Users\\Aivaras\\AppData\\Local\\Temp\\12258a1e-2e79-4ab5-82ac-0c28dc0b4b23_ld1(3).zip.b23\\ld1\\teisingai\\solutions\\Regionas01Metai01U2.cs [Read Only]",
-              "RelativeToolTip": "..\\..\\..\\..\\AppData\\Local\\Temp\\12258a1e-2e79-4ab5-82ac-0c28dc0b4b23_ld1(3).zip.b23\\ld1\\teisingai\\solutions\\Regionas01Metai01U2.cs [Read Only]",
-              "ViewState": "AgIAABAAAAAAAAAAAAAAADYAAAABAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "SZ03201903U2Test.cs",
+              "DocumentMoniker": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld1\\teisingai\\tests\\SZ03201903U2Test.cs",
+              "RelativeDocumentMoniker": "tests\\SZ03201903U2Test.cs",
+              "ToolTip": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld1\\teisingai\\tests\\SZ03201903U2Test.cs",
+              "RelativeToolTip": "tests\\SZ03201903U2Test.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAgwDsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T07:20:29.553Z",
-              "EditorCaption": " [Read Only]"
+              "WhenOpened": "2024-09-10T19:29:19.131Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "SZ02201802U2.cs",
               "DocumentMoniker": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld1\\teisingai\\solutions\\SZ02201802U2.cs",
               "RelativeDocumentMoniker": "solutions\\SZ02201802U2.cs",
               "ToolTip": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld1\\teisingai\\solutions\\SZ02201802U2.cs",
               "RelativeToolTip": "solutions\\SZ02201802U2.cs",
-              "ViewState": "AgIAAKwAAAAAAAAAAAAiwNEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAL4AAAAAAAAAAAAIwM4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-18T18:22:25.671Z"
+              "WhenOpened": "2024-09-18T18:22:25.671Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld1\\teisingai\\solutions\\Program.cs",
-              "RelativeDocumentMoniker": "solutions\\Program.cs",
-              "ToolTip": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld1\\teisingai\\solutions\\Program.cs",
-              "RelativeToolTip": "solutions\\Program.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAqwA8AAAA1AAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "SZ03201903U2.cs",
+              "DocumentMoniker": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld1\\teisingai\\solutions\\SZ03201903U2.cs",
+              "RelativeDocumentMoniker": "solutions\\SZ03201903U2.cs",
+              "ToolTip": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld1\\teisingai\\solutions\\SZ03201903U2.cs",
+              "RelativeToolTip": "solutions\\SZ03201903U2.cs",
+              "ViewState": "AgIAAIUAAAAAAAAAAAAQwI0AAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T19:29:21.117Z",
+              "WhenOpened": "2024-09-10T19:27:53.236Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SZ02201802U2Test.cs",
+              "DocumentMoniker": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld1\\teisingai\\tests\\SZ02201802U2Test.cs",
+              "RelativeDocumentMoniker": "tests\\SZ02201802U2Test.cs",
+              "ToolTip": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld1\\teisingai\\tests\\SZ02201802U2Test.cs",
+              "RelativeToolTip": "tests\\SZ02201802U2Test.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T19:28:52.626Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AZ01201701U2Test.cs",
+              "DocumentMoniker": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld1\\teisingai\\tests\\AZ01201701U2Test.cs",
+              "RelativeDocumentMoniker": "tests\\AZ01201701U2Test.cs",
+              "ToolTip": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld1\\teisingai\\tests\\AZ01201701U2Test.cs",
+              "RelativeToolTip": "tests\\AZ01201701U2Test.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAgwCwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T19:28:39.686Z",
               "EditorCaption": ""
             },
             {
@@ -114,58 +141,40 @@
               "RelativeDocumentMoniker": "solutions\\AZ01201701U2.cs",
               "ToolTip": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld1\\teisingai\\solutions\\AZ01201701U2.cs",
               "RelativeToolTip": "solutions\\AZ01201701U2.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAowIsAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAAwJsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T19:29:20.556Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SZ02201802U2Test.cs",
-              "DocumentMoniker": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld1\\teisingai\\tests\\SZ02201802U2Test.cs",
-              "RelativeDocumentMoniker": "tests\\SZ02201802U2Test.cs",
-              "ToolTip": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld1\\teisingai\\tests\\SZ02201802U2Test.cs",
-              "RelativeToolTip": "tests\\SZ02201802U2Test.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwAkAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T19:28:52.626Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AZ01201701U2Test.cs",
-              "DocumentMoniker": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld1\\teisingai\\tests\\AZ01201701U2Test.cs",
-              "RelativeDocumentMoniker": "tests\\AZ01201701U2Test.cs",
-              "ToolTip": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld1\\teisingai\\tests\\AZ01201701U2Test.cs",
-              "RelativeToolTip": "tests\\AZ01201701U2Test.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T19:28:39.686Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SZ03201903U2.cs",
-              "DocumentMoniker": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld1\\teisingai\\solutions\\SZ03201903U2.cs",
-              "RelativeDocumentMoniker": "solutions\\SZ03201903U2.cs",
-              "ToolTip": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld1\\teisingai\\solutions\\SZ03201903U2.cs",
-              "RelativeToolTip": "solutions\\SZ03201903U2.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T19:27:53.236Z",
+              "WhenOpened": "2024-09-10T19:29:20.556Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "SZ03201903U2Test.cs",
-              "DocumentMoniker": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld1\\teisingai\\tests\\SZ03201903U2Test.cs",
-              "RelativeDocumentMoniker": "tests\\SZ03201903U2Test.cs",
-              "ToolTip": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld1\\teisingai\\tests\\SZ03201903U2Test.cs",
-              "RelativeToolTip": "tests\\SZ03201903U2Test.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAwAAAAOAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld1\\teisingai\\solutions\\Program.cs",
+              "RelativeDocumentMoniker": "solutions\\Program.cs",
+              "ToolTip": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld1\\teisingai\\solutions\\Program.cs",
+              "RelativeToolTip": "solutions\\Program.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAA8AAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T19:29:19.131Z"
+              "WhenOpened": "2024-09-10T19:29:21.117Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Regionas01Metai01U2.cs",
+              "DocumentMoniker": "C:\\Users\\Aivaras\\AppData\\Local\\Temp\\12258a1e-2e79-4ab5-82ac-0c28dc0b4b23_ld1(3).zip.b23\\ld1\\teisingai\\solutions\\Regionas01Metai01U2.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\AppData\\Local\\Temp\\12258a1e-2e79-4ab5-82ac-0c28dc0b4b23_ld1(3).zip.b23\\ld1\\teisingai\\solutions\\Regionas01Metai01U2.cs",
+              "ToolTip": "C:\\Users\\Aivaras\\AppData\\Local\\Temp\\12258a1e-2e79-4ab5-82ac-0c28dc0b4b23_ld1(3).zip.b23\\ld1\\teisingai\\solutions\\Regionas01Metai01U2.cs [Read Only]",
+              "RelativeToolTip": "..\\..\\..\\..\\AppData\\Local\\Temp\\12258a1e-2e79-4ab5-82ac-0c28dc0b4b23_ld1(3).zip.b23\\ld1\\teisingai\\solutions\\Regionas01Metai01U2.cs [Read Only]",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAADYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T07:20:29.553Z",
+              "EditorCaption": " [Read Only]"
             },
             {
               "$type": "Document",

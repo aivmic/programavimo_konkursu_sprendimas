@@ -1,0 +1,147 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld2\\ld1-debugged\\derinimui\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{59CC910C-E571-49EF-B129-6A874D33B9EB}|solutions\\solutions.csproj|c:\\users\\aivaras\\desktop\\derinimas\\ld2\\ld1-debugged\\derinimui\\solutions\\dzukija2010u2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59CC910C-E571-49EF-B129-6A874D33B9EB}|solutions\\solutions.csproj|solutionrelative:solutions\\dzukija2010u2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59CC910C-E571-49EF-B129-6A874D33B9EB}|solutions\\solutions.csproj|c:\\users\\aivaras\\desktop\\derinimas\\ld2\\ld1-debugged\\derinimui\\solutions\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59CC910C-E571-49EF-B129-6A874D33B9EB}|solutions\\solutions.csproj|solutionrelative:solutions\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B54BF8BC-80E0-4CAF-A41E-DDD61FEE94AB}|tests\\tests.csproj|c:\\users\\aivaras\\desktop\\derinimas\\ld2\\ld1-debugged\\derinimui\\tests\\dzukija2010u2test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B54BF8BC-80E0-4CAF-A41E-DDD61FEE94AB}|tests\\tests.csproj|solutionrelative:tests\\dzukija2010u2test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59CC910C-E571-49EF-B129-6A874D33B9EB}|solutions\\solutions.csproj|c:\\users\\aivaras\\desktop\\derinimas\\ld2\\ld1-debugged\\derinimui\\solutions\\dzukija2011u2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59CC910C-E571-49EF-B129-6A874D33B9EB}|solutions\\solutions.csproj|solutionrelative:solutions\\dzukija2011u2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59CC910C-E571-49EF-B129-6A874D33B9EB}|solutions\\solutions.csproj|c:\\users\\aivaras\\desktop\\derinimas\\ld2\\ld1-debugged\\derinimui\\solutions\\dzukija2012u2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59CC910C-E571-49EF-B129-6A874D33B9EB}|solutions\\solutions.csproj|solutionrelative:solutions\\dzukija2012u2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B54BF8BC-80E0-4CAF-A41E-DDD61FEE94AB}|tests\\tests.csproj|c:\\users\\aivaras\\desktop\\derinimas\\ld2\\ld1-debugged\\derinimui\\tests\\dzukija2012u2test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B54BF8BC-80E0-4CAF-A41E-DDD61FEE94AB}|tests\\tests.csproj|solutionrelative:tests\\dzukija2012u2test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B54BF8BC-80E0-4CAF-A41E-DDD61FEE94AB}|tests\\tests.csproj|c:\\users\\aivaras\\desktop\\derinimas\\ld2\\ld1-debugged\\derinimui\\tests\\dzukija2011u2test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B54BF8BC-80E0-4CAF-A41E-DDD61FEE94AB}|tests\\tests.csproj|solutionrelative:tests\\dzukija2011u2test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld2\\ld1-debugged\\derinimui\\solutions\\Program.cs",
+              "RelativeDocumentMoniker": "solutions\\Program.cs",
+              "ToolTip": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld2\\ld1-debugged\\derinimui\\solutions\\Program.cs",
+              "RelativeToolTip": "solutions\\Program.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAowDYAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-20T16:02:47.594Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Dzukija2010U2Test.cs",
+              "DocumentMoniker": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld2\\ld1-debugged\\derinimui\\tests\\Dzukija2010U2Test.cs",
+              "RelativeDocumentMoniker": "tests\\Dzukija2010U2Test.cs",
+              "ToolTip": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld2\\ld1-debugged\\derinimui\\tests\\Dzukija2010U2Test.cs",
+              "RelativeToolTip": "tests\\Dzukija2010U2Test.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAA1wBsAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-20T15:07:05.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Dzukija2012U2Test.cs",
+              "DocumentMoniker": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld2\\ld1-debugged\\derinimui\\tests\\Dzukija2012U2Test.cs",
+              "RelativeDocumentMoniker": "tests\\Dzukija2012U2Test.cs",
+              "ToolTip": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld2\\ld1-debugged\\derinimui\\tests\\Dzukija2012U2Test.cs",
+              "RelativeToolTip": "tests\\Dzukija2012U2Test.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAuwCgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T18:56:38.19Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Dzukija2010U2.cs",
+              "DocumentMoniker": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld2\\ld1-debugged\\derinimui\\solutions\\Dzukija2010U2.cs",
+              "RelativeDocumentMoniker": "solutions\\Dzukija2010U2.cs",
+              "ToolTip": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld2\\ld1-debugged\\derinimui\\solutions\\Dzukija2010U2.cs",
+              "RelativeToolTip": "solutions\\Dzukija2010U2.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAwFUAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T18:55:19.678Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Dzukija2011U2.cs",
+              "DocumentMoniker": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld2\\ld1-debugged\\derinimui\\solutions\\Dzukija2011U2.cs",
+              "RelativeDocumentMoniker": "solutions\\Dzukija2011U2.cs",
+              "ToolTip": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld2\\ld1-debugged\\derinimui\\solutions\\Dzukija2011U2.cs",
+              "RelativeToolTip": "solutions\\Dzukija2011U2.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAADwvyYAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T18:55:46.212Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Dzukija2012U2.cs",
+              "DocumentMoniker": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld2\\ld1-debugged\\derinimui\\solutions\\Dzukija2012U2.cs",
+              "RelativeDocumentMoniker": "solutions\\Dzukija2012U2.cs",
+              "ToolTip": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld2\\ld1-debugged\\derinimui\\solutions\\Dzukija2012U2.cs",
+              "RelativeToolTip": "solutions\\Dzukija2012U2.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAgwD0AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T18:56:02.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Dzukija2011U2Test.cs",
+              "DocumentMoniker": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld2\\ld1-debugged\\derinimui\\tests\\Dzukija2011U2Test.cs",
+              "RelativeDocumentMoniker": "tests\\Dzukija2011U2Test.cs",
+              "ToolTip": "C:\\Users\\Aivaras\\Desktop\\Derinimas\\ld2\\ld1-debugged\\derinimui\\tests\\Dzukija2011U2Test.cs",
+              "RelativeToolTip": "tests\\Dzukija2011U2Test.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T18:56:26.757Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
