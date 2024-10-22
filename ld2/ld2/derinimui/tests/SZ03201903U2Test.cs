@@ -1,18 +1,20 @@
-namespace Tests;
-
 using NUnit;
 using NUnit.Framework;
-
 using Solutions;
+using System.Diagnostics;
+using System.Linq;
 
+namespace Tests;
 
 /// <summary>
 /// Unit tests for Metai Regionas.
 /// </summary>
-[TestFixture] [NonParallelizable]
+[TestFixture]
+[NonParallelizable]
 public class SZ03201903U2Test
 {
-	[Test] [NonParallelizable]
+    [Test]
+    [NonParallelizable]
     public void TestDwarfFriendship()
     {
         // Retrieve inputs and expected outputs from the solution's test data.
@@ -35,11 +37,20 @@ public class SZ03201903U2Test
                 var expectedOutput = it.Pair.ExpectedOutput;
                 var index = it.Index;
 
-                // Instantiate the solution and run it
                 var task = new SZ03201903U2();
+
+                var stopwatch = Stopwatch.StartNew();
+
                 var actualOutput = task.Run(input);
 
-                // Check if the lists of friends match
+                stopwatch.Stop();
+                var elapsedMilliseconds = stopwatch.ElapsedMilliseconds;
+
+                if (elapsedMilliseconds > 1000)
+                {
+                    throw new Exception($"Execution time exceeded 1000 ms for test data index {index}. Elapsed time: {elapsedMilliseconds} ms.");
+                }
+
                 Assert.That(
                     actualOutput.Friends.Count == expectedOutput.Friends.Count,
                     $"Number of friend pairs do not match at test data index {index}."
@@ -53,7 +64,6 @@ public class SZ03201903U2Test
                     );
                 }
 
-                // Check if the best friends pair match
                 Assert.That(
                     actualOutput.BestFriends.Name1 == expectedOutput.BestFriends.Name1 && actualOutput.BestFriends.Name2 == expectedOutput.BestFriends.Name2,
                     $"Best friends mismatch at test data index {index}: Expected ({expectedOutput.BestFriends.Name1}, {expectedOutput.BestFriends.Name2}), but got ({actualOutput.BestFriends.Name1}, {actualOutput.BestFriends.Name2})."

@@ -75,8 +75,11 @@ public class AZ01201701U2
         {
             var sequence = input.Sequences[i];
             mLog.Info($"Processing sequence: {sequence}");
+
             string result = ProcessSequence(sequence);
-            results[i] = result; // Store result at the original index
+
+            results[i+1] = result;
+
             mLog.Info($"Result for sequence: {result}");
         });
 

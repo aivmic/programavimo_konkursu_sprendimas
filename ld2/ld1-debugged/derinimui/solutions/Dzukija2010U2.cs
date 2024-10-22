@@ -30,8 +30,8 @@ public class Dzukija2010U2
     /// Test data. You can use a different layout if you want.
     /// </summary>
     public class TestData
-    {        
-        public static Input[] Inputs {get;} = {
+    {
+        public static Input[] Inputs { get; } = {
             new Input{
               dienos = 3,
         vaikai = [ 7,7,10 ],
@@ -40,7 +40,7 @@ public class Dzukija2010U2
             //data goes here
         };
 
-        public static Output[] Outputs{get;} = {
+        public static Output[] Outputs { get; } = {
             new Output{
               ats = [ 0,6,5 ]
             }
@@ -58,46 +58,43 @@ public class Dzukija2010U2
     /// </summary>
     /// <param name="input">Input</param>
     /// <returns>Output</returns>
-    public Output Run(Input input) 
+    public Output Run(Input input)
     {
         int[] atsakymas = new int[50];
         int[] gal = new int[50];
-        int skaicius = 0;
-        for (int y=0; y < input.dienos;y++) {
-        int pab = input.zodziai[y];
-            for (int i = 0; i < input.vaikai[y]; i++)
+        for (int y = 0; y < input.dienos; y++)
+        {
+            int pab = input.zodziai[y];
+            int children = input.vaikai[y];
+            int remainingChildren = children;
+            int skaicius = 0;
+            int index = 0;
+
+            for (int i = 0; i < children; i++)
             {
-         
-                if (skaicius <= pab)
-                {
-                    skaicius++;
-                }
-                if (skaicius >= pab)
-                {
-                    if (atsakymas[i] != -1)
-                    {
-                        atsakymas[i] = -1;
-                    }
-                    else
-                    {
-                        break;
-                    }
-                    skaicius = 1;
-                }
-                if (i == input.vaikai[y] - 1)
-                {
-                    i = -1;
-                }
+                atsakymas[i] = 0;
             }
-            
+
+            while (remainingChildren > 0)
+            {
+                skaicius++;
+                if (skaicius == pab)
+                {
+                    atsakymas[index] = -1;
+                    remainingChildren--;
+                    skaicius = 0;
+                }
+                index = (index + 1) % children;
+            }
+
             for (int i = 0; i < input.vaikai[y]; i++)
             {
-                if (atsakymas[i] != -1)
+                if (atsakymas[i] == 0)
                 {
                     gal[y]++;
                 }
             }
-        
+
         }
         Output output = new Output();
         output.ats = gal;

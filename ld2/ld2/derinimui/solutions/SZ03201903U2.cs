@@ -1,4 +1,4 @@
-namespace Solutions;
+﻿namespace Solutions;
 
 using NLog;
 
@@ -93,7 +93,6 @@ public class SZ03201903U2
 	/// </summary>
 	Logger mLog = LogManager.GetCurrentClassLogger();
 
-
     /// <summary>
     /// Runs the task solution.
     /// </summary>
@@ -106,8 +105,7 @@ public class SZ03201903U2
         Output output = new Output();
         Dictionary<Dwarf, Dwarf> bestFriends = new Dictionary<Dwarf, Dwarf>();
 
-        // Find the best friend for each dwarf
-        foreach (var dwarf in input.Dwarves)
+        Parallel.ForEach(input.Dwarves, dwarf =>
         {
             Dwarf bestFriend = null;
             double minDistance = double.MaxValue;
@@ -126,11 +124,12 @@ public class SZ03201903U2
                 }
             }
 
-            mLog.Info($"Dwarf {dwarf.Name} considers {bestFriend.Name} as their best friend with a distance of {minDistance:F4}");
             bestFriends[dwarf] = bestFriend;
-
             output.Friends.Add((dwarf.Name, bestFriend.Name, minDistance));
-        }
+
+
+            mLog.Info($"Dwarf {dwarf.Name} considers {bestFriend.Name} as their best friend with a distance of {minDistance:F4}");
+        });
 
         Parallel.ForEach(input.Dwarves, dwarf =>
         {
@@ -140,7 +139,8 @@ public class SZ03201903U2
             {
                 lock (output)
                 {
-                    if (output.BestFriends == default || input.Dwarves.IndexOf(dwarf) < input.Dwarves.IndexOf(bestFriends.FirstOrDefault(bf => bf.Key.Name == output.BestFriends.Name1).Key))
+                    if (output.BestFriends == default || input.Dwarves.IndexOf(dwarf) < input.Dwarves.IndexOf(bestFriends.FirstOrDefault(bf =>
+                    bf.Key.Name == output.BestFriends.Name1).Key))
                     {
                         output.BestFriends = (dwarf.Name, friend.Name);
                     }

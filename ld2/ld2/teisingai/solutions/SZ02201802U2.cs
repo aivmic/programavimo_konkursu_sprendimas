@@ -35,7 +35,7 @@ public class SZ02201802U2
     public class Player
     {
         public int Number { get; set; }
-        public int[] Shots { get; set; } // Each shot's points
+        public int[] Shots { get; set; }
 
         public int GetTotalPoints()
         {
@@ -114,14 +114,12 @@ public class SZ02201802U2
     {
         mLog.Info("Pradėta spręsti krepšinio užduotį.");
 
-        // Apskaičiuojame komandų taškus
         int teamAPoints = CalculateTotalPoints(input.TeamA);
         int teamBPoints = CalculateTotalPoints(input.TeamB);
 
         mLog.Info($"Komanda A surinko {teamAPoints} taškų.");
         mLog.Info($"Komanda B surinko {teamBPoints} taškų.");
 
-        // Nustatome laimėjusią komandą
         string winningTeam;
         Player[] winningPlayers;
         if (teamAPoints > teamBPoints)
@@ -137,7 +135,6 @@ public class SZ02201802U2
             mLog.Info("Laimėjo B komanda.");
         }
 
-        // Nustatome rezultatyviausią žaidėją laimėjusioje komandoje
         Player topPlayer = GetTopScorer(winningPlayers);
 
         mLog.Info($"Rezultatyviausias {winningTeam} komandos žaidėjas yra nr. {topPlayer.Number} su {topPlayer.GetTotalPoints()} taškais.");
@@ -151,7 +148,6 @@ public class SZ02201802U2
             MissedShots = topPlayer.GetMissedShots()
         });
 
-        // Grąžiname rezultatą
         return new Output
         {
             WinningTeam = winningTeam,
@@ -162,17 +158,16 @@ public class SZ02201802U2
         };
     }
     /// <summary>
-    /// Apskaičiuoja komandos bendrus taškus.
+    /// Calculate total points for a team.
     /// </summary>
     private int CalculateTotalPoints(Player[] team)
     {
         int totalPoints = 0;
 
-        // Use Parallel.For to sum points in parallel
         Parallel.For(0, team.Length, i =>
         {
             int points = team[i].GetTotalPoints();
-            Interlocked.Add(ref totalPoints, points); // Safely add points to totalPoints
+            Interlocked.Add(ref totalPoints, points); 
         });
 
         return totalPoints;
@@ -180,7 +175,7 @@ public class SZ02201802U2
     }
 
     /// <summary>
-    /// Nustato rezultatyviausią žaidėją laimėjusioje komandoje.
+    /// Get top scorer from a team.
     /// </summary>
     private Player GetTopScorer(Player[] team)
     {
@@ -200,7 +195,7 @@ public class SZ02201802U2
     }
 
     /// <summary>
-    /// Išveda rezultatą į konsolę reikiamu formatu.
+    /// Print results to the console.
     /// </summary>
     public void PrintResults(Output output)
     {

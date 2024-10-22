@@ -4,16 +4,19 @@ using NUnit;
 using NUnit.Framework;
 
 using Solutions;
+using System.Diagnostics;
 
 
 /// <summary>
 /// Unit tests for Metai Regionas.
 /// </summary>
 
-[TestFixture] [NonParallelizable]
+[TestFixture]
+[NonParallelizable]
 public class AZ01201701U2Test
 {
-	[Test] [NonParallelizable]
+    [Test]
+    [NonParallelizable]
     public void TestPairs()
     {
         // Take inputs and outputs for the solution
@@ -36,9 +39,20 @@ public class AZ01201701U2Test
                 var index = it.index;
 
                 var task = new Solutions.AZ01201701U2();
+
+                Stopwatch stopwatch = new Stopwatch();
+                stopwatch.Start();
+
                 var output = task.Run(input);
 
-                // Compare each element of the results list
+                stopwatch.Stop();
+                long elapsedMilliseconds = stopwatch.ElapsedMilliseconds;
+
+                if (elapsedMilliseconds > 1000)
+                {
+                    Assert.Fail($"Test at index {index} exceeded time limit: {elapsedMilliseconds} ms.");
+                }
+
                 Assert.That(output.Results, Is.EqualTo(expectedOutput.Results),
                     $"Actual output is not matching expected output at test data index {index}.");
             });

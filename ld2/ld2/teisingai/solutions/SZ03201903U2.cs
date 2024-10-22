@@ -106,13 +106,13 @@ public class SZ03201903U2
         Output output = new Output();
         Dictionary<Dwarf, Dwarf> bestFriends = new Dictionary<Dwarf, Dwarf>();
 
-        // Find the best friend for each dwarf
         foreach (var dwarf in input.Dwarves)
         {
             Dwarf bestFriend = null;
             double minDistance = double.MaxValue;
 
-            foreach (var other in input.Dwarves)
+
+            Parallel.ForEach(input.Dwarves, other =>
             {
                 if (dwarf != other)
                 {
@@ -124,12 +124,13 @@ public class SZ03201903U2
                         minDistance = distance;
                     }
                 }
-            }
+            });
+
+            bestFriends[dwarf] = bestFriend;
+            output.Friends.Add((dwarf.Name, bestFriend.Name, minDistance));
+
 
             mLog.Info($"Dwarf {dwarf.Name} considers {bestFriend.Name} as their best friend with a distance of {minDistance:F4}");
-            bestFriends[dwarf] = bestFriend;
-
-            output.Friends.Add((dwarf.Name, bestFriend.Name, minDistance));
         }
 
         Parallel.ForEach(input.Dwarves, dwarf =>

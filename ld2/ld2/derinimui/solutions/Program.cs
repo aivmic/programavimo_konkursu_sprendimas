@@ -41,36 +41,66 @@ public class Program
 	/// <param name="args">Command line argumens.</param>
 	void Run(string[] args)
 	{
-		mLog.Info("Starting.");
+        mLog.Info("Starting.");
 
-		//run solution for the first task
-		var task01U1 = new AZ01201701U2();
+        //run solution for the first task
+        var task01U1 = new AZ01201701U2();
 
-		foreach( var input in AZ01201701U2.TestData.Inputs )
-		{
-			var output = task01U1.Run(input);
-			//TODO: log output, input pair here			
-		}
+        foreach (var input in AZ01201701U2.TestData.Inputs)
+        {
+            var output = task01U1.Run(input);
+            // Log input
+            mLog.Info($"Input: {string.Join(", ", input.Sequences)}");
 
-		//run solution for the second task
-		var task02U1 = new SZ02201802U2();
+            // Log output
+            mLog.Info($"Output: {string.Join("\n", output.Results)}");
+        }
 
-		foreach( var input in SZ02201802U2.TestData.Inputs )
-		{
-			var output = task02U1.Run(input);
-			//TODO: log output, input pair here			
-		}
+        //run solution for the second task
+        var task02U1 = new SZ02201802U2();
 
-		//run solution for the third task
-		var task03U1 = new SZ03201903U2();
+        foreach (var input in SZ02201802U2.TestData.Inputs)
+        {
+            var output = task02U1.Run(input);
 
-		foreach( var input in SZ03201903U2.TestData.Inputs )
-		{
-			var output = task03U1.Run(input);
-			//TODO: log output, input pair here			
-		}
+            // Log input
+            foreach (var player in input.TeamA)
+            {
+                mLog.Info($"Team A - Player {player.Number}: Shots = {string.Join(", ", player.Shots)}");
+            }
+            foreach (var player in input.TeamB)
+            {
+                mLog.Info($"Team B - Player {player.Number}: Shots = {string.Join(", ", player.Shots)}");
+            }
 
-		//
-		mLog.Info("All done.");
-	}
+            // Log output
+            mLog.Info($"Output: Winning Team = {output.WinningTeam}," +
+                $" Top Player Number = {output.TopPlayerNumber}, Points = {output.Points}," +
+                $" Successful Shots = {output.SuccessfulShots}, Missed Shots = {output.MissedShots}");
+        }
+
+        //run solution for the third task
+        var task03U1 = new SZ03201903U2();
+
+        foreach (var input in SZ03201903U2.TestData.Inputs)
+        {
+            var output = task03U1.Run(input);
+
+            // Log input
+            foreach (var dwarf in input.Dwarves)
+            {
+                mLog.Info($"Nykštukas: {dwarf.Name}, Koordinatės: ({dwarf.X}, {dwarf.Y})");
+            }
+
+
+            // Log output
+            foreach (var friend in output.Friends)
+            {
+                Console.WriteLine($"{friend.Name1} {friend.Name2} {friend.Distance:F4}");
+            }
+
+            Console.WriteLine($"{output.BestFriends.Name1} {output.BestFriends.Name2}");
+        }
+        mLog.Info("All done.");
+    }
 }
