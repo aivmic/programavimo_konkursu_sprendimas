@@ -110,7 +110,7 @@ public class SZ02201802U2
     /// </summary>
     /// <param name="input">Input</param>
     /// <returns>Output</returns>
-    public Output Run(Input input) 
+    public Output Run(Input input)
     {
         mLog.Info("Pradėta spręsti krepšinio užduotį.");
 
@@ -166,8 +166,9 @@ public class SZ02201802U2
 
         Parallel.For(0, team.Length, i =>
         {
+            Thread.Sleep(1 + Random.Shared.Next(10));
             int points = team[i].GetTotalPoints();
-            Interlocked.Add(ref totalPoints, points); 
+            Interlocked.Add(ref totalPoints, points);
         });
 
         return totalPoints;
@@ -175,24 +176,40 @@ public class SZ02201802U2
     }
 
     /// <summary>
-    /// Get top scorer from a team.
+    /// Get top scorer from a team with incorrect Monitor usage.
     /// </summary>
     private Player GetTopScorer(Player[] team)
     {
-        Player topPlayer = team[0];
-        for (int i = 1; i < team.Length; i++)
+        if (team == null || team.Length == 0)
+            return null;
+        if (team.Length == 1)
+            return team[0];
+
+        int bestPoints = int.MinValue;
+        Player bestPlayer = null;
+        object lockObject = new object();
+
+        Parallel.ForEach(team, player =>
         {
-            if (team[i].GetTotalPoints() > topPlayer.GetTotalPoints())
+            Thread.Sleep(1 + Random.Shared.Next(10));
+            int currentPoints = player.GetTotalPoints();
+
+            Monitor.Enter(lockObject);
+            try
             {
-                topPlayer = team[i];
+                if (currentPoints > bestPoints ||
+                (currentPoints == bestPoints && player.Number < bestPlayer.Number))
+                {
+                    bestPoints = currentPoints;
+                    bestPlayer = player;
+                }
             }
-            else if (team[i].GetTotalPoints() == topPlayer.GetTotalPoints() && team[i].Number < topPlayer.Number)
-            {
-                topPlayer = team[i];
-            }
-        }
-        return topPlayer;
+            finally { Monitor.Exit(lockObject); }
+        });
+
+        return bestPlayer;
     }
+
 
     /// <summary>
     /// Print results to the console.

@@ -1,7 +1,7 @@
 ﻿namespace Solutions;
 
 using NLog;
-using System.Collections.Concurrent;
+using System.Threading;
 using System.Threading.Tasks;
 
 /// <summary>
@@ -73,11 +73,40 @@ public class AZ01201701U2
 
         Parallel.For(0, input.Sequences.Length, i =>
         {
+            Thread.Sleep(1 + Random.Shared.Next(10));
             var sequence = input.Sequences[i];
-            mLog.Info($"Processing sequence: {sequence}");
+
+            Monitor.Enter(mLog);
+            try
+            {
+                mLog.Info($"Processing sequence: {sequence}");
+            }
+            finally
+            {
+                Monitor.Exit(mLog);
+            }
+
             string result = ProcessSequence(sequence);
-            results[i] = result; // Store result at the original index
-            mLog.Info($"Result for sequence: {result}");
+
+            Monitor.Enter(results);
+            try
+            {
+                results[i] = result;
+            }
+            finally
+            {
+                Monitor.Exit(results);
+            }
+
+            Monitor.Enter(mLog);
+            try
+            {
+                mLog.Info($"Result for sequence: {result}");
+            }
+            finally
+            {
+                Monitor.Exit(mLog);
+            }
         });
 
         output.Results = results.ToList();

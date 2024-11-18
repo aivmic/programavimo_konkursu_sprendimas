@@ -1,4 +1,4 @@
-namespace Solutions;
+﻿namespace Solutions;
 
 using NLog;
 
@@ -8,9 +8,6 @@ using NLog;
 /// </summary>
 public class SZ03201903U2
 {
-    /// <summary>
-    /// Data class that stores information about a dwarf.
-    /// </summary>
     public class Dwarf
     {
         public string Name { get; set; }
@@ -30,9 +27,6 @@ public class SZ03201903U2
         }
     }
 
-    /// <summary>
-    /// A single input.
-    /// </summary>
     public class Input
     {
         public List<Dwarf> Dwarves { get; set; }
@@ -43,9 +37,6 @@ public class SZ03201903U2
         }
     }
 
-    /// <summary>
-    /// A single output.
-    /// </summary>
     public class Output
     {
         public List<(string Name1, string Name2, double Distance)> Friends { get; set; }
@@ -57,9 +48,6 @@ public class SZ03201903U2
         }
     }
 
-    /// <summary>
-    /// Test data. You can use a different layout if you want.
-    /// </summary>
     public class TestData
     {
         public static Input[] Inputs { get; } = {
@@ -88,63 +76,107 @@ public class SZ03201903U2
             };
     }
 
-    /// <summary>
-	/// Logger for this class.
-	/// </summary>
-	Logger mLog = LogManager.GetCurrentClassLogger();
+    Logger mLog = LogManager.GetCurrentClassLogger();
 
-
-    /// <summary>
-    /// Runs the task solution.
-    /// </summary>
-    /// <param name="input">Input</param>
-    /// <returns>Output</returns>
-    public Output Run(Input input) 
+    public Output Run(Input input)
     {
         mLog.Info("Starting to solve the task");
 
         Output output = new Output();
         Dictionary<Dwarf, Dwarf> bestFriends = new Dictionary<Dwarf, Dwarf>();
 
+        var rwLock = new ReaderWriterLock();
+        const int timeout = 500; // Timeout in milliseconds
+
         foreach (var dwarf in input.Dwarves)
         {
-            Dwarf bestFriend = null;
-            double minDistance = double.MaxValue;
-
+            Dwarf currentDwarf = dwarf;
+            Dwarf threadBestFriend = null;
+            double threadMinDistance = double.MaxValue;
 
             Parallel.ForEach(input.Dwarves, other =>
             {
-                if (dwarf != other)
+                Thread.Sleep(1 + Random.Shared.Next(10));
+                if (currentDwarf != other)
                 {
-                    double distance = dwarf.DistanceTo(other);
+                    double distance = currentDwarf.DistanceTo(other);
 
-                    if (distance < minDistance)
+                    rwLock.AcquireReaderLock(timeout);
+                    try
                     {
-                        bestFriend = other;
-                        minDistance = distance;
+                        if (distance < threadMinDistance)
+                        {
+                            LockCookie lockCookie = rwLock.UpgradeToWriterLock(timeout);
+                            try
+                            {
+                                if (distance < threadMinDistance)
+                                {
+                                    threadBestFriend = other;
+                                    threadMinDistance = distance;
+                                }
+                            }
+                            finally
+                            {
+                                rwLock.DowngradeFromWriterLock(ref lockCookie);
+                            }
+                        }
+                    }
+                    finally
+                    {
+                        rwLock.ReleaseReaderLock();
                     }
                 }
             });
 
-            bestFriends[dwarf] = bestFriend;
-            output.Friends.Add((dwarf.Name, bestFriend.Name, minDistance));
+            rwLock.AcquireWriterLock(timeout);
+            try
+            {
+                bestFriends[currentDwarf] = threadBestFriend;
+                output.Friends.Add((currentDwarf.Name, threadBestFriend.Name, threadMinDistance));
+            }
+            finally
+            {
+                rwLock.ReleaseWriterLock();
+            }
 
-
-            mLog.Info($"Dwarf {dwarf.Name} considers {bestFriend.Name} as their best friend with a distance of {minDistance:F4}");
+            mLog.Info($"Dwarf {currentDwarf.Name} considers {threadBestFriend.Name} as their best friend with a distance of {threadMinDistance:F4}");
         }
 
         Parallel.ForEach(input.Dwarves, dwarf =>
         {
-            var friend = bestFriends[dwarf];
+            Thread.Sleep(1 + Random.Shared.Next(10));
 
-            if (bestFriends[friend] == dwarf)
+            rwLock.AcquireReaderLock(timeout);
+            bool needUpdate = false;
+            Dwarf friend = null;
+            try
             {
-                lock (output)
+                friend = bestFriends[dwarf];
+                if (bestFriends[friend] == dwarf)
                 {
-                    if (output.BestFriends == default || input.Dwarves.IndexOf(dwarf) < input.Dwarves.IndexOf(bestFriends.FirstOrDefault(bf => bf.Key.Name == output.BestFriends.Name1).Key))
+                    needUpdate = true;
+                }
+            }
+            finally
+            {
+                rwLock.ReleaseReaderLock();
+            }
+
+            if (needUpdate)
+            {
+                rwLock.AcquireWriterLock(timeout);
+                try
+                {
+                    if (output.BestFriends == default ||
+                        input.Dwarves.IndexOf(dwarf) < input.Dwarves.IndexOf(bestFriends.FirstOrDefault(
+                            bf => bf.Key.Name == output.BestFriends.Name1).Key))
                     {
                         output.BestFriends = (dwarf.Name, friend.Name);
                     }
+                }
+                finally
+                {
+                    rwLock.ReleaseWriterLock();
                 }
             }
         });

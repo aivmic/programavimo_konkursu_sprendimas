@@ -1,9 +1,6 @@
 namespace Tests;
 
-using NUnit;
 using NUnit.Framework;
-
-using Solutions;
 using System.Diagnostics;
 
 
@@ -11,10 +8,12 @@ using System.Diagnostics;
 /// Unit tests for Metai Regionas.
 /// </summary>
 
-[TestFixture] [NonParallelizable]
+[TestFixture]
+[NonParallelizable]
 public class AZ01201701U2Test
 {
-	[Test] [NonParallelizable]
+    [Test]
+    [NonParallelizable]
     public void TestPairs()
     {
         // Take inputs and outputs for the solution
@@ -41,18 +40,22 @@ public class AZ01201701U2Test
                 Stopwatch stopwatch = new Stopwatch();
                 stopwatch.Start();
 
-                var output = task.Run(input);
+                var resultTask = Task.Run(() => task.Run(input));
 
-                stopwatch.Stop();
-                long elapsedMilliseconds = stopwatch.ElapsedMilliseconds;
-
-                if (elapsedMilliseconds > 1000)
+                if (resultTask.Wait(1000))
                 {
-                    Assert.Fail($"Test at index {index} exceeded time limit: {elapsedMilliseconds} ms.");
-                }
+                    stopwatch.Stop();
 
-                Assert.That(output.Results, Is.EqualTo(expectedOutput.Results),
-                    $"Actual output is not matching expected output at test data index {index}.");
+                    var output = task.Run(input);
+
+                    Assert.That(output.Results, Is.EqualTo(expectedOutput.Results),
+                        $"Actual output is not matching expected output at test data index {index}.");
+                }
+                else
+                {
+                    Assert.Fail($"Task did not complete in 1000 ms at test data index {index}.");
+                }
             });
     }
+
 }

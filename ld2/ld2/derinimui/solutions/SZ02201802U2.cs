@@ -157,10 +157,6 @@ public class SZ02201802U2
             MissedShots = topPlayer.GetMissedShots()
         };
     }
-
-    private object lockA = new object();
-    private object lockB = new object();
-
     /// <summary>
     /// Calculate total points for a team.
     /// </summary>
@@ -170,55 +166,46 @@ public class SZ02201802U2
 
         Parallel.For(0, team.Length, i =>
         {
-            if (i % 2 == 0)
-            {
-                lock (lockA)
-                {
-                    Thread.Sleep(10);
-                    lock (lockB)
-                    {
-                        int points = team[i].GetTotalPoints();
-                        totalPoints += points;
-                    }
-                }
-            }
-            else
-            {
-                lock (lockB)
-                {
-                    Thread.Sleep(10);
-                    lock (lockA)
-                    {
-                        int points = team[i].GetTotalPoints();
-                        totalPoints += points;
-                    }
-                }
-            }
+            Thread.Sleep(1 + Random.Shared.Next(10));
+            int points = team[i].GetTotalPoints();
+            Interlocked.Add(ref totalPoints, points);
         });
 
         return totalPoints;
+
     }
 
-
     /// <summary>
-    /// Get top scorer from a team.
+    /// Get top scorer from a team with incorrect Monitor usage.
     /// </summary>
     private Player GetTopScorer(Player[] team)
     {
-        Player topPlayer = team[0];
-        for (int i = 1; i < team.Length; i++)
+        if (team == null || team.Length == 0)
+            return null;
+        if (team.Length == 1)
+            return team[0];
+
+        int bestPoints = int.MinValue;
+        Player bestPlayer = null;
+        object lockObject = new object();
+
+        Parallel.ForEach(team, player =>
         {
-            if (team[i].GetTotalPoints() > topPlayer.GetTotalPoints())
+            Thread.Sleep(1 + Random.Shared.Next(10));
+            int currentPoints = player.GetTotalPoints();
+
+            Monitor.Enter(lockObject);
+            if (currentPoints > bestPoints ||
+            (currentPoints == bestPoints && player.Number < bestPlayer.Number))
             {
-                topPlayer = team[i];
+                bestPoints = currentPoints;
+                bestPlayer = player;
             }
-            else if (team[i].GetTotalPoints() == topPlayer.GetTotalPoints() && team[i].Number < topPlayer.Number)
-            {
-                topPlayer = team[i];
-            }
-        }
-        return topPlayer;
+        });
+
+        return bestPlayer;
     }
+
 
     /// <summary>
     /// Print results to the console.

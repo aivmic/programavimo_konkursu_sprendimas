@@ -1,9 +1,6 @@
 namespace Tests;
 
-using NUnit;
 using NUnit.Framework;
-
-using Solutions;
 using System.Diagnostics;
 
 
@@ -43,18 +40,22 @@ public class AZ01201701U2Test
                 Stopwatch stopwatch = new Stopwatch();
                 stopwatch.Start();
 
-                var output = task.Run(input);
+                var resultTask = Task.Run(() => task.Run(input));
 
-                stopwatch.Stop();
-                long elapsedMilliseconds = stopwatch.ElapsedMilliseconds;
-
-                if (elapsedMilliseconds > 1000)
+                if (resultTask.Wait(1000))
                 {
-                    Assert.Fail($"Test at index {index} exceeded time limit: {elapsedMilliseconds} ms.");
-                }
+                    stopwatch.Stop();
 
-                Assert.That(output.Results, Is.EqualTo(expectedOutput.Results),
-                    $"Actual output is not matching expected output at test data index {index}.");
+                    var output = task.Run(input);
+
+                    Assert.That(output.Results, Is.EqualTo(expectedOutput.Results),
+                        $"Actual output is not matching expected output at test data index {index}.");
+                }
+                else
+                {
+                    Assert.Fail($"Task did not complete in 10000 ms at test data index {index}.");
+                }
             });
     }
+
 }
